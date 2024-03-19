@@ -1,0 +1,47 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "format": "prettier --write --ignore-path .gitignore",
+    "lint": "eslint --ext .js,.vue,.ts,.tsx --ignore-path .gitignore --fix",
+    "prepare": "husky install",
+    "generate:api": "npx openapi-typescript openapi.yml --output openapi.gen.ts"
+  },
+  "lint-staged": {
+    "*.{ts,vue}": [
+      "sh -c 'if ! echo $1 | grep -E \".gen.ts$\"; then npm run format $1 && npm run lint $1; fi' --"
+    ]
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@nuxtjs/eslint-config": "^12.0.0",
+    "@nuxtjs/tailwindcss": "^6.11.4",
+    "@pinia-plugin-persistedstate/nuxt": "^1.1.2",
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "@typescript-eslint/parser": "^6.7.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^14.0.1",
+    "nuxt": "^3.7.1",
+    "prettier": "^3.0.3"
+  },
+  "volta": {
+    "node": "20.6.1"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.4.11",
+    "@vee-validate/zod": "^4.11.6",
+    "flowbite": "^2.3.0",
+    "openapi-typescript": "^6.7.5",
+    "pinia": "^2.1.6",
+    "vee-validate": "^4.11.6",
+    "zod": "^3.22.2"
+  }
+}
