@@ -31,3 +31,8 @@ $ npm run generate:api
 
 Путь к файлу схемы указан `openapi.yml`.
 Обновите файл, если вам нужно, прежде чем генерировать типы.
+
+## компоненты Tailwind CSS из библиотеки Flowbite:
+
+npm install -D tailwindcss postcss autoprefixer
+npm install flowbite
