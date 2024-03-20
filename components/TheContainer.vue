@@ -1,16 +1,32 @@
 <template>
-  <div class="container">
-    <slot />
+  <div class="container-bg">
+    <div class="container-content">
+      <slot />
+    </div>
   </div>
 </template>
 
 <style scoped>
-.container {
-  margin-top: 1.5rem;
-  margin-left: auto;
-  margin-right: auto;
+.container-bg {
+  position: relative; /* Установка позиции */
+  margin: 1.5rem;
   padding-left: 15px;
   padding-right: 15px;
+  background-color: rgba(105, 159, 232, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+}
+
+.container-content {
+  position: relative;
+  z-index: 2;
+  /* background-color: rgba(
+    105,
+    159,
+    232,
+    0.1
+  ); */
+  border-radius: 8px;
 }
 
 @media (min-width: 544px) {

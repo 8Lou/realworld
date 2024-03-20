@@ -1,19 +1,19 @@
 <script setup lang="ts">
 // Импорт необходимых функций и компонентов из библиотек
 // Импорт константы API_BASE_URL из фаimport { computed, useFetch, useRoute } from '#imports'
-import { API_BASE_URL } from '~/constants'
-'~/constants'
+import { API_BASE_URL } from "~/constants";
+("~/constants");
 // Импорт запроса статей из библиотек
-import { GetArticlesResponse } from '~/lib/api/article'
+import { GetArticlesResponse } from "~/lib/api/article";
 // Импорт запроса тегов из библиотек
-import { GetTagsResponse } from '~/lib/api/tag'
+import { GetTagsResponse } from "~/lib/api/tag";
 
 // Использование маршрута из Vue Router
 const route = useRoute();
 
 // Вычисляемое свойство для определения вкладок меню
 const menuTabs = computed(() => {
-  const base = [{ label: 'Все новости', href: `/` }];
+  const base = [{ label: "Все новости", href: `/` }];
   if (route.query.tag) {
     return [
       ...base,
@@ -29,17 +29,17 @@ const menuTabs = computed(() => {
 // Определение текущей вкладки
 const currentTab = route.query.tag
   ? `#${route.query.tag as string}`
-  : 'Global Feed';
+  : "Global Feed";
 
 // Формирование URL для запроса статей
 const apiUrl = computed(() => {
   const url = new URL(`${API_BASE_URL}/articles`);
-  url.searchParams.append('limit', '10');
+  url.searchParams.append("limit", "10");
   if (route.query.offset) {
-    url.searchParams.append('offset', route.query.offset as string);
+    url.searchParams.append("offset", route.query.offset as string);
   }
   if (route.query.tag) {
-    url.searchParams.append('tag', route.query.tag as string);
+    url.searchParams.append("tag", route.query.tag as string);
   }
   return url.toString();
 });
@@ -47,14 +47,14 @@ const apiUrl = computed(() => {
 // Запрос статей и с использованием useFetch
 const { data: articleData, pending: articlePending } =
   useFetch<GetArticlesResponse>(apiUrl, {
-    method: 'GET',
+    method: "GET",
   });
 
 // Запрос и тегов с использованием useFetch
 const { data: tagData, pending: tagPending } = useFetch<GetTagsResponse>(
   new URL(`${API_BASE_URL}/tags`).toString(),
   {
-    method: 'GET',
+    method: "GET",
   }
 );
 
@@ -68,7 +68,18 @@ console.log('articlePending:', articlePending);
 
 <template>
   <!-- Главный контейнер страницы -->
-  <div class='p-4 md:ml-64 h-auto pt-20'>
+  <div
+    class="p-4 md:ml-64 h-auto pt-20"
+    style="
+      background: linear-gradient(
+          217deg,
+          rgba(255, 0, 0, 0.8),
+          rgba(255, 0, 0, 0) 70.71%
+        ),
+        linear-gradient(127deg, rgba(0, 100, 0, 0.8), rgba(0, 155, 0, 0) 70.71%),
+        linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+    "
+  >
     <!-- Заголовок страницы -->
     <Head>
       <title>Новости — {{ APP_NAME }}</title>
@@ -110,13 +121,15 @@ console.log('articlePending:', articlePending);
             </div>
           </div>
         </div>
-        
+
         <!-- Правая колонка (сайдбар) -->
         <div class="md:w-1/4 mt-2">
           <!-- Блок с популярными тегами -->
           <div class="sidebar p-3 rounded bg-gray-800">
-            <p class="mb-2 text-sm font-medium text-gray-400">Популярные теги</p>
-            
+            <p class="mb-2 text-sm font-medium text-gray-400">
+              Популярные теги
+            </p>
+
             <!-- Отображение состояния загрузки тегов -->
             <p v-if="tagPending">Загрузка тегов...</p>
             <!-- Отображение списка популярных тегов -->
@@ -127,7 +140,7 @@ console.log('articlePending:', articlePending);
                 :key="tag"
                 class="mr-1 mb-1 inline-block"
               >
-              <!-- Ссылка на страницу с тегом -->
+                <!-- Ссылка на страницу с тегом -->
                 <NuxtLink :href="`./?tag=${encodeURIComponent(tag)}`">
                   <!-- Компонент для отображения тега -->
                   <AppTag :name="tag" class="tag text-white bg-gray-600" />
