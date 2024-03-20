@@ -126,12 +126,19 @@ console.log('articlePending:', articlePending);
         <div class="md:w-1/4 mt-2">
           <!-- Блок с популярными тегами -->
           <div class="sidebar p-3 rounded bg-white-800">
-            <p class="mb-2 text-sm font-medium text-white-400">
+            <p
+              class="mb-3 text-sm font-medium text-white"
+              style="
+                background-color: rgba(100, 100, 100, 0.8);
+                border-radius: 5px;
+                padding: 7px;
+              "
+            >
               Популярные теги
             </p>
 
             <!-- Отображение состояния загрузки тегов -->
-            <p v-if="tagPending">Загрузка тегов...</p>
+            <p v-if="tagPending" style="color: #7fbfed">Загрузка тегов...</p>
             <!-- Отображение списка популярных тегов -->
             <ul v-else-if="tagData && tagData.tags" class="tag-list list-none">
               <!-- Итерация по списку тегов -->
@@ -143,7 +150,16 @@ console.log('articlePending:', articlePending);
                 <!-- Ссылка на страницу с тегом -->
                 <NuxtLink :href="`./?tag=${encodeURIComponent(tag)}`">
                   <!-- Компонент для отображения тега -->
-                  <AppTag :name="tag" class="tag text-white bg-gray-600" />
+                  <AppTag
+                    :name="tag"
+                    class="tag text-white"
+                    style="
+                      background-color: rgba(100, 100, 100, 0.8);
+                      border-radius: 5px;
+                      border: rgba(100, 100, 100, 0.8);
+                      padding: 7px;
+                    "
+                  />
                 </NuxtLink>
               </li>
             </ul>

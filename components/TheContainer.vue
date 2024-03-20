@@ -14,7 +14,7 @@
   padding-right: 15px;
   background-color: rgba(105, 159, 232, 0.5);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(180, 205, 238, 0.192);
+  border: 1px solid rgba(182, 221, 246, 0.192);
   border-radius: 10px;
   box-shadow: 6px 6px 8px rgba(0.1, 0.1, 0.1, 0.1);
 }

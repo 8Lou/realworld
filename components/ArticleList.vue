@@ -28,14 +28,14 @@ const props = defineProps<{
         <div class="inline-block align-middle mr-6 ml-1">
           <a
             class="author block font-medium"
-            :style="{ color: '#B3C1FE', 'margin-left': '30px' }"
+            :style="{ color: '#6B38EF', 'margin-left': '30px' }"
             :href="`/@${encodeURIComponent(article.author.username)}`"
           >
             <span>{{ article.author.username }}</span>
           </a>
           <span
             class="date block text-xs"
-            :style="{ color: '#FFFFFF', 'margin-left': '30px' }"
+            :style="{ color: '#6B38EF', 'margin-left': '30px' }"
             >{{ new Date(article.createdAt).toDateString() }}</span
           >
         </div>
@@ -54,8 +54,8 @@ const props = defineProps<{
         :href="`/article/${article.slug}`"
       >
         <h1
-          class="font-bold text-lg mb-2"
-          :style="{ color: '#85D4EB', 'margin-left': '65px' }"
+          class="font-bold text-lg mb-4"
+          :style="{ color: '#7FC4ED', 'margin-left': '66px' }"
         >
           {{ article.title }}
         </h1>
@@ -65,7 +65,7 @@ const props = defineProps<{
         </p>
 
         <div class="flex justify-between items-center">
-          <span class="text-xs font-light" :style="{ color: '#B3C1FE' }"
+          <span class="text-xs font-light" :style="{ color: '#D1CFDC' }"
             >Читать подробнее...</span
           >
 
