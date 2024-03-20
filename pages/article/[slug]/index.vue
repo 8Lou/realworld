@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { ref, useFetch, useRoute, watchEffect } from '#imports'
-import { API_BASE_URL } from '~/constants'
+import { ref, useFetch, useRoute, watchEffect } from "#imports";
+import { API_BASE_URL } from "~/constants";
 import {
   GetArticleCommentsResponse,
   GetArticleResponse,
-} from '~/lib/api/article'
-import { authStore } from '~/stores/auth'
+} from "~/lib/api/article";
+import { authStore } from "~/stores/auth";
 
 const route = useRoute();
 const slug = route.params.slug as string;
@@ -17,7 +17,7 @@ const fetchComments = () => {
   const { data } = useFetch<GetArticleCommentsResponse>(
     new URL(`${API_BASE_URL}/articles/${slug}/comments`).toString(),
     {
-      method: 'GET',
+      method: "GET",
     }
   );
 
@@ -32,7 +32,7 @@ const { data: articleData, pending: articlePending } =
   useFetch<GetArticleResponse>(
     new URL(`${API_BASE_URL}/articles/${slug}`).toString(),
     {
-      method: 'GET',
+      method: "GET",
     }
   );
 
@@ -48,7 +48,7 @@ const handleCommentCreate = () => {
         {{
           articleData && articleData.article
             ? articleData.article.title
-            : 'Loading the article...'
+            : "Loading the article..."
         }}
       </title>
     </Head>

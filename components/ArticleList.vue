@@ -1,6 +1,6 @@
 <script setup lang="ts">
 //import { defineProps } from 'vue';
-import { Article } from '~/types'
+import { Article } from "~/types";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const props = defineProps<{
@@ -27,14 +27,17 @@ const props = defineProps<{
 
         <div class="inline-block align-middle mr-6 ml-1">
           <a
-            class="author block font-medium text-gray-500"
+            class="author block font-medium"
+            :style="{ color: '#B3C1FE', 'margin-left': '30px' }"
             :href="`/@${encodeURIComponent(article.author.username)}`"
           >
             <span>{{ article.author.username }}</span>
           </a>
-          <span class="date block text-gray-400 text-xs">{{
-            new Date(article.createdAt).toDateString()
-          }}</span>
+          <span
+            class="date block text-xs"
+            :style="{ color: '#FFFFFF', 'margin-left': '30px' }"
+            >{{ new Date(article.createdAt).toDateString() }}</span
+          >
         </div>
 
         <div class="float-right">
@@ -50,22 +53,27 @@ const props = defineProps<{
         class="preview-link block text-black"
         :href="`/article/${article.slug}`"
       >
-        <h1 class="font-bold text-lg mb-1 text-gray-700">
+        <h1
+          class="font-bold text-lg mb-2"
+          :style="{ color: '#85D4EB', 'margin-left': '65px' }"
+        >
           {{ article.title }}
         </h1>
 
-        <p class="text-sm text-gray-400 mb-4">
+        <p class="text-sm text-white mb-4">
           {{ article.description }}
         </p>
 
         <div class="flex justify-between items-center">
-          <span class="text-xs font-light text-gray-400">Читать подробнее...</span>
+          <span class="text-xs font-light" :style="{ color: '#B3C1FE' }"
+            >Читать подробнее...</span
+          >
 
           <ul class="tag-list list-none">
             <li
               v-for="tag in article.tagList"
               :key="tag"
-              class="inline-block font-light text-xs py-0 border-gray-300 text-gray-400 mr-1"
+              class="inline-block font-light text-white py-0 border-gray-300 text-blue-500 mr-1"
             >
               <AppTag :name="tag" />
             </li>

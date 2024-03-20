@@ -125,8 +125,8 @@ console.log('articlePending:', articlePending);
         <!-- Правая колонка (сайдбар) -->
         <div class="md:w-1/4 mt-2">
           <!-- Блок с популярными тегами -->
-          <div class="sidebar p-3 rounded bg-gray-800">
-            <p class="mb-2 text-sm font-medium text-gray-400">
+          <div class="sidebar p-3 rounded bg-white-800">
+            <p class="mb-2 text-sm font-medium text-white-400">
               Популярные теги
             </p>
 

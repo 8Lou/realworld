@@ -17,11 +17,11 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(['update:activeTab']);
+const emit = defineEmits(["update:activeTab"]);
 
 const isActiveTab = (tab: Tab) => tab.label === props.activeTab;
 const setActiveTab = (tabLabel: string) => {
-  emit('update:activeTab', tabLabel);
+  emit("update:activeTab", tabLabel);
 };
 </script>
 
@@ -31,7 +31,7 @@ const setActiveTab = (tabLabel: string) => {
       <li v-for="tab in tabs" :key="tab.label" class="list-none float-left">
         <NuxtLink
           :href="tab.href"
-          class="text-sm leading-6 box-border no-underline block px-4 py-2 rounded-none"
+          class="text-white leading-6 box-border no-underline block px-4 py-2 rounded-none"
           :class="
             isActiveTab(tab)
               ? 'bg-white border-b-2 border-custom-green text-custom-green'
@@ -49,7 +49,7 @@ const setActiveTab = (tabLabel: string) => {
 <style scoped>
 .switchable:after,
 .switchable:before {
-  content: '';
+  content: "";
   clear: both;
   display: block;
 }

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { APP_NAME } from '~/constants';
+import { APP_NAME } from "~/constants";
 const title = APP_NAME.toLowerCase();
 </script>
 
@@ -23,5 +23,12 @@ const title = APP_NAME.toLowerCase();
 }
 
 .jumbotron {
+}
+
+h1 {
+  color: #7fbfed;
+}
+p {
+  color: #7fbfed;
 }
 </style>
