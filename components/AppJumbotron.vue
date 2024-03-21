@@ -8,10 +8,10 @@ const title = APP_NAME.toLowerCase();
     class="w-full flex justify-center items-center text-center p-4 overflow-auto text-gray-400 shadow-inner"
   >
     <TheContainer>
-      <h1 class="text-6xl font-extrabold text-center pb-4">
+      <h1 class="text-6xl font-extrabold text-center pb-4 text-shadow">
         {{ title }}
       </h1>
-      <p class="font-thin text-xl pb-4">
+      <p class="font-thin text-xl pb-4 text-shadow">
         CRM система для управления недвижимостью.
       </p>
     </TheContainer>
@@ -20,6 +20,7 @@ const title = APP_NAME.toLowerCase();
 
 <style scoped>
 .text-shadow {
+  text-shadow: 1px 1px 10px rgba(208, 105, 120, 0.9);
 }
 
 .jumbotron {

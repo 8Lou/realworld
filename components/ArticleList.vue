@@ -27,15 +27,23 @@ const props = defineProps<{
 
         <div class="inline-block align-middle mr-6 ml-1">
           <a
-            class="author block font-medium"
-            :style="{ color: '#6B38EF', 'margin-left': '30px' }"
+            class="author block font-medium text-white"
+            :style="{
+              'margin-left': '30px',
+              textShadow:
+                '1px 1px #70A0BE, 1px -1px #70A0BE, -1px 1px #70A0BE, -1px -1px #70A0BE',
+            }"
             :href="`/@${encodeURIComponent(article.author.username)}`"
           >
             <span>{{ article.author.username }}</span>
           </a>
           <span
-            class="date block text-xs"
-            :style="{ color: '#6B38EF', 'margin-left': '30px' }"
+            class="date block text-xs text-white"
+            :style="{
+              'margin-left': '30px',
+              textShadow:
+                '1px 1px #70A0BE, 1px -1px #70A0BE, -1px 1px #70A0BE, -1px -1px #70A0BE',
+            }"
             >{{ new Date(article.createdAt).toDateString() }}</span
           >
         </div>
@@ -55,7 +63,7 @@ const props = defineProps<{
       >
         <h1
           class="font-bold text-lg mb-4"
-          :style="{ color: '#7FC4ED', 'margin-left': '66px' }"
+          :style="{ color: '#D06978', 'margin-left': '66px' }"
         >
           {{ article.title }}
         </h1>
@@ -65,7 +73,9 @@ const props = defineProps<{
         </p>
 
         <div class="flex justify-between items-center">
-          <span class="text-xs font-light" :style="{ color: '#D1CFDC' }"
+          <span
+            class="text-xs font-light text-white"
+            :style="{ color: '#D06978' }"
             >Читать подробнее...</span
           >
 

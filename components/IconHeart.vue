@@ -10,7 +10,7 @@ const props = defineProps<{
 <template>
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    fill="#DE65A3"
+    fill="#D06978"
     viewBox="0 0 24 24"
     width="80"
     style="width: 18px; height: 18px"

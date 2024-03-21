@@ -1,4 +1,6 @@
-# ![We property App](logo.png)
+# https://8lou.github.io/realworld/
+
+## ![We property App](logo.png)
 
 > ## [Nuxt3](https://nuxt.com/) / [Tailwind CSS](https://tailwindcss.com/) / [Pinia(Store)](https://pinia.vuejs.org/) кодовая база реального проекта [FiPi.pro](https://git.fipi.pro/krasi/Backend) спецификация и API.
 
@@ -37,3 +39,6 @@ $ npm run generate:api
 npm install -D tailwindcss postcss autoprefixer
 npm install flowbite
 KHTeka
+npx nuxt generate --debug
+npm install gh-pages --save-dev
+npm run deploy

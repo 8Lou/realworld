@@ -1,10 +1,14 @@
 {
   "name": "nuxt-app",
   "private": true,
+  "homepage": "/https://8lou.github.io/realworld",
   "scripts": {
     "build": "nuxt build",
+    "predeploy": "nuxt generate",
+    "deploy": "gh-pages -d dist",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "generate:debug": "nuxt generate --debug",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "format": "prettier --write --ignore-path .gitignore",
@@ -28,6 +32,7 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-vue": "^9.17.0",
+    "gh-pages": "^6.1.1",
     "husky": "^8.0.0",
     "lint-staged": "^14.0.1",
     "nuxt": "^3.7.1",
