@@ -1,0 +1,1 @@
+import{f as r,o,c as s}from"./entry.00d493d3.js";const a=["src"],l=r({__name:"UserAvatar",props:{image:{}},setup(n){return(e,c)=>(o(),s("img",{src:e.image,alt:"User's profile image",class:"rounded-full border-0 inline-block"},null,8,a))}});export{l as _};
