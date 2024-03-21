@@ -41,4 +41,5 @@ npm install flowbite
 KHTeka
 npx nuxt generate --debug
 npm install gh-pages --save-dev
+npm run generate
 npm run deploy

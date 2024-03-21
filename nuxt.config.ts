@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   mode: "static",
   router: {
-    base: "/https://8lou.github.io/realworld/",
+    base: "realworld/",
   },
   buildModules: ["@nuxtjs/tailwindcss"],
   target: "static",
