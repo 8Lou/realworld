@@ -1,0 +1,1 @@
+import{a0 as r}from"./entry.4e723040.js";const s={currentUser:void 0},i=r({id:"auth",state:()=>s,getters:{isAuthenticated:t=>t.currentUser!==void 0,jwtToken:t=>{var e;return(e=t.currentUser)==null?void 0:e.token}},actions:{signIn(t){this.currentUser=t},signOut(){this.currentUser=void 0}},persist:!0});export{i as a};
